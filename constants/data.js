@@ -6,48 +6,6 @@ const userData = {
   email: "talebwateen@gmail.com",
   phone: "(519) 694-0565",
   address: "London, Ontario Canada",
-  projects: [
-    {
-      title: "Tailwind Master Kit",
-      link: "https://tailwindmasterkit.com",
-      imgUrl: "/tmk.jpg",
-    },
-    {
-      title: "PlaceholderTech",
-      link: "https://placeholdertech.in",
-      imgUrl: "/placeholdertech.png",
-    },
-    {
-      title: "Portfolio",
-      link: "https://manuarora.in",
-      imgUrl: "/portfolio.png",
-    },
-    {
-      title: "CovidRescue",
-      link: "https://covidrescue.co.in",
-      imgUrl: "/covidrescue.png",
-    },
-    {
-      title: "Algochurn",
-      link: "https://algochurn.com",
-      imgUrl: "/algochurn.png",
-    },
-    {
-      title: "Playground",
-      link: "https://play.placeholdertech.in",
-      imgUrl: "/playground.png",
-    },
-    {
-      title: "Feedmeback",
-      link: "https://feedmeback.vercel.app",
-      imgUrl: "/feedmeback.png",
-    },
-    {
-      title: "Devmedium",
-      link: "https://devmedium.vercel.app",
-      imgUrl: "/devmedium.png",
-    },
-  ],
   about: {
     title:
       "I'm a software developer that loves building products and web applications that impact millions of lives",
@@ -61,56 +19,42 @@ const userData = {
   },
   experience: [
     {
-      title: "Software Developer",
-      company: "mroads",
-      year: "2021",
-      companyLink: "https://mroads.com",
-      desc: "Contributed to our flagship product - Panna - which is an AI powered candidate interviewing product.",
+      title: "Software Engineer",
+      company: "Trackunit",
+      year: "Nov 2020 - Present",
+      companyLink: "https://www.trackunit.com/",
+      desc: "SaaS-based IoT solutions and machine insights provider to the global construction equipment industry.",
     },
     {
-      title: "Founder and Developer",
-      company: "TailwindMasterKit",
-      year: "2021",
-      companyLink: "https://tailwindmasterkit.com",
-      desc: "Developed a marketplace for tailwind web components (React, HTML and Angular) and templates.",
+      title: "Technical Specialist",
+      company: "Apple",
+      year: "Aug 2019 - Nov 2020",
+      companyLink: "https://www.apple.com/ca/",
+      desc: "Helped new owners get started and current ones get quick, efficient support — developing strong, positive relationships with Apple.",
+    },
+  ],
+  education: [
+    {
+      title: "Bachelor of Engineering Science, Computer Engineering (BESc)",
+      company: "Western University",
+      year: "Sep 2015 - May 2020",
+      companyLink: "https://www.uwo.ca/",
+      desc: "",
     },
     {
-      title: "Founder and Developer",
-      company: "Algochurn",
-      year: "2021",
-      companyLink: "https://algochurn.com",
-      desc: "Your last moment revision friend right before a Tech coding interview. Practice problems and get hired at top Product based companies.",
-    },
-    {
-      title: "Internship",
-      company: "Intel Corporation",
-      year: "2019",
-      companyLink: "https://intel.com",
-      desc: "Developed pothole detection system with OpenCV and computer vision, detects potholes on roads and informs the driver.",
-    },
-    {
-      title: "Graduation",
-      company: "UPES, Dehradun.",
-      year: "2019",
-      companyLink: "https://upes.co.in",
-      desc: "Major in Computer Science and Engineering with a CGPA of 7.0. Nobody asks this but it's okay.",
-    },
-    {
-      title: "High School",
-      company: "Delhi Public School, Jaipur.",
-      year: "2015",
-      companyLink: "https://upes.co.in",
-      desc: "Subjects being PCM - I barely survived with 93.6% marks aggregate. Flex fridays, fellas.",
+      title: "Complete Next.js Developer in 2022: Zero to Mastery",
+      company: "Zero To Mastery Academy",
+      year: "Feb 2022 - Present",
+      companyLink:
+        "https://www.udemy.com/course/complete-nextjs-developer-zero-to-mastery/",
+      desc: "Learning NextJS and to build enterprise level fullstack ReactJS apps. Taught by industry expert, using modern best practices.",
     },
   ],
   resumeUrl:
     "https://drive.google.com/file/d/1xmE3BOmgM7TAOOgVp36xQIQvYDntDYoo/view?usp=sharing",
   socialLinks: {
-    instagram: "https://instagram.com/maninthere",
-    twitter: "https://twitter.com/mannupaaji",
-    linkedin: "https://linkedin.com/in/manuarora28",
-    github: "https://github.com/manuarora700",
-    facebook: "https://facebook.com/",
+    linkedin: "https://www.linkedin.com/in/wateentaleb",
+    github: "https://github.com/wateentaleb",
   },
 };
 

@@ -4,11 +4,17 @@ import ContainerBlock from "../components/ContainerBlock";
 import FavouriteProjects from "../components/FavouriteProjects";
 import LatestCode from "../components/LatestCode";
 import Hero from "../components/Hero";
-import getLatestRepos from "@lib/getLatestRepos";
 import userData from "@constants/data";
+import { setContext } from "@apollo/client/link/context";
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  gql,
+  createHttpLink,
+} from "@apollo/client";
 export default function Home({ repositories }) {
-  // console.log("repositories", repositories);
+  // console.log("test", `${process.env.GITHUB_USERNAME}`);
   return (
     <ContainerBlock
       title="Wateen Taleb - Software Engineer"
@@ -21,16 +27,52 @@ export default function Home({ repositories }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  // console.log(process.env.GITHUB_AUTH_TOKEN);
-  let token = process.env.GITHUB_AUTH_TOKEN;
+export const getStaticProps = async () => {
+  const httpLink = createHttpLink({
+    uri: "https://api.github.com/graphql",
+  });
 
-  const repositories = await getLatestRepos(userData, token);
-  // console.log("REPOSITORIES", repositories);
+  const authLink = setContext((_, { headers }) => {
+    return {
+      headers: {
+        ...headers,
+        authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+      },
+    };
+  });
+
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
+
+  const { data } = await client.query({
+    query: gql`
+      {
+        user(login: "${process.env.GITHUB_USERNAME}") {
+          repositories(last: 30) {
+            totalCount
+            nodes {
+              name
+              shortDescriptionHTML
+              id
+              url
+              openGraphImageUrl
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  const { user } = data;
+  // console.log("data", user);
+  // const numberofitems = user.repositories.totalCount;
+  const repositories = user.repositories.nodes;
+
+  // console.log("repositories", repositories);
 
   return {
-    props: {
-      repositories,
-    },
+    props: { repositories },
   };
 };
