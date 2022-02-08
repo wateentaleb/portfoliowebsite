@@ -74,5 +74,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { repositories },
+    revalidate: 60,
   };
 };
